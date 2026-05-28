@@ -148,4 +148,23 @@ def shuffle(nums,n):
 # print(shuffle(nums,n))
 
 
-# 1672. Richest Customer Wealth
+def minimum(n1,n2):
+    # n=n1+n2
+    # di={}
+    # ans=[]
+    # for i in n:
+    #     di[i]=di.get(i,0)+1
+    # for i,j in di.items():
+    #     if j>=2:
+    #         ans.append(i)
+    ans=[]
+    
+    if len(ans)==0:
+        return -1
+    else:
+        return min(ans)
+       
+
+n1=[1,2,3,6]
+n2=[2,3,4,5]
+print(minimum(n1,n2))
