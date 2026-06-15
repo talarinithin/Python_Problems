@@ -74,7 +74,7 @@ def prblm3(nums,t):
 
 nums=[1,2,2,2,3,4]
 t=2
-print(prblm3(nums,t))
+# print(prblm3(nums,t))
 #  ------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------
 
 # 4. Find Minimum in Rotated Sorted Array
@@ -172,7 +172,7 @@ def lowerbound(nums,x):
 
 nums=[1,2,2,3]
 x=2
-print(lowerbound(nums,x))
+# print(lowerbound(nums,x))
 
 def lowerbound1(nums,x):
     l=0
@@ -232,7 +232,7 @@ def upperbound(nums,x):
 
 nums = [3,5,8,15,19]
 x = 9
-print(upperbound(nums,x))
+# print(upperbound(nums,x))
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -287,7 +287,124 @@ def insertpos(nums,t):
 
 nums=[1,3,5,6]
 t=7
-print(insertpos(nums,t))
+# print(insertpos(nums,t))
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Floor and Ceil in Sorted Array
+
+# Given a sorted array nums and an integer x. Find the floor and ceil of x in nums. 
+# The floor of x is the largest element in the array which is smaller than or equal to x. 
+# The ceiling of x is the smallest element in the array greater than or equal to x. 
+# If no floor or ceil exists, output -1.
+# Input : nums =[3, 4, 4, 7, 8, 10], x= 5
+
+# Output: 4 7
+# Input : nums =[3, 4, 4, 7, 8, 10], x= 8
+
+# Output: 8 8
+
+def floorceil(nums,x):
+    floor=-1
+    ceil=-1
+    l=0
+    r=len(nums)-1
+    while l<=r:
+        mid=(l+r)//2
+        if nums[mid]<=x:
+            floor=nums[mid]
+            l=mid+1
+        else:
+            r=mid-1
+    
+    l=0
+    r=len(nums)-1
+    while l<=r:
+        mid=(l+r)//2
+        if nums[mid]>=x:
+            ceil=nums[mid]
+            r=mid-1
+        else:
+            l=mid+1
+    return [floor,ceil]
+
+
+nums=[3, 4, 4, 7, 8, 10]
+x=8
+# print(floorceil(nums,x))
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+def firstlast(nums,t):
+    l=0
+    r=len(nums)-1
+    fst=-1
+    while l<=r:
+        mid=(l+r)//2
+        if nums[mid]==t:
+            fst=mid
+            r=mid-1
+        elif nums[mid]<t:
+            l=mid+1
+        else:
+            r=mid-1
+    
+    l=0
+    r=len(nums)-1
+    lst=-1
+    while l<=r:
+        mid=(l+r)//2
+        if nums[mid]==t:
+            lst=mid
+            l=mid+1
+        elif nums[mid]<t:
+            l=mid+1
+        else:
+            r=mid-1
+    return [fst,lst]
+
+   
+
+nums=[5, 7, 7, 8, 8, 10]
+t=8
+# print(firstlast(nums,t))
+
+
+
+
+def countoccurance(nums,t):
+    l=0
+    r=len(nums)-1
+    ans=0
+    while l<=r:
+        mid=(l+r)//2
+        if nums[mid]==t:
+            ans+=1
+        elif nums[mid]<t:
+            l=mid+1
+        else:
+            r=mid-1
+    return ans
+
+
+nums=[0,0,1,1,1,2,3]
+t=1
+# print(countoccurance(nums,t))\
+
+
+
+
+
+def prblm(n):
+    ans=0
+    while n!=0:
+        rem=n%10
+       
+
+n=24689
+print(prblm(n))
+
+
+# print(2456%10)
