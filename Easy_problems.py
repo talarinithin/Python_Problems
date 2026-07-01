@@ -167,4 +167,177 @@ def minimum(n1,n2):
 
 n1=[1,2,3,6]
 n2=[2,3,4,5]
-print(minimum(n1,n2))
+# print(minimum(n1,n2))
+
+
+
+# **********************************************************************************************************
+# Find the Largest Element
+def large(n):
+    ans=0
+    for i in n:
+        if ans<i:
+            ans=i
+    return ans
+
+def method2(n):
+    l=n.sort()
+    return n[-1]
+
+
+n=[10, 25, 8, 45, 12]
+print(large(n))
+print(method2(n))
+
+
+# -----------------------Find the Smallest Element------------
+def small(n):
+    ans=float('inf')
+    for i in n:
+        if ans>i:
+            ans=i
+    return ans
+
+def sm2(n):
+    n.sort()
+    return n[0]
+
+
+n=[12, 5, 18, 2, 9, 20]
+print(small(n))
+print(sm2(n))
+
+# ----------------------------Find the Sum of Elements---------------------
+def sumelem(n):
+    ans=0
+    for i in n:
+        ans+=i
+    return ans
+
+def sum2(n):
+    return sum(n)
+
+n=[2,4,6,8,10]
+print(sumelem(n))
+print(sum2(n))
+
+# ------------------------------Find the Average----------------------------
+def avgval(n):
+    return sum(n)/len(n)
+
+def avg2(n):
+    ans=0
+    count=0
+    for i in n:
+        ans+=i
+        count+=1
+    return ans/count
+
+
+
+n=[10,20,30,40]
+print(avgval(n))
+print(avg2(n))
+
+
+# ---------------------------------------Count Even and Odd Numbers-----------------
+def EOD(n):
+    even=0
+    odd=0
+    for i in n:
+        if i%2==0:
+            even+=1
+        else:
+            odd+=1
+    return even,odd
+
+n=[1,2,3,4,5,6]
+print(EOD(n))
+
+
+# ------------------------------------------Reverse an Array------------------------------------
+def revarray(n):
+    return n[::-1]
+
+def rev2(n):
+    ans=[]
+    for i in range(-1,-len(n)-1,-1):
+        ans.append(n[i])
+    return ans
+
+
+n=[1,2,3,4,5]
+print(revarray(n))
+print(rev2(n))
+
+
+# ---------------------------------Find the Second Largest Element---------------------
+def seclar(n):
+    sec=float('-inf')
+    fir=float('-inf')
+    for i in n:
+        if fir<i:
+            fir=i
+    for j in n:
+        if sec<j and j!=fir:
+            sec=j
+    return sec
+    
+    
+
+n=[12, 45, 67, 23, 89, 56]
+print(seclar(n))
+
+
+# ---------------------------------Find the Maximum and Minimum---------------------------
+def maxmin(n):
+    return max(n),min(n)
+
+def maxmin2(n):
+    high=float('-inf')
+    low=float('inf')
+    for i in n:
+        if high<i:
+            high=i
+    for j in n:
+        if low>j:
+            low=j
+    return high,low
+
+n=[8,15,2,19,10]
+print(maxmin(n))
+print(maxmin2(n))
+
+
+# ------------------------------Search an Element--------------------------
+def search(n,t):
+    if t in n:
+        return "found"
+    
+
+
+n=[10,20,30,40,50]
+t=30
+print(search(n,t))
+
+# -------------------------------Count Frequency of an Element-------------------
+def cou(n,t):
+    count=0
+    for i in n:
+        if i==t:
+            count+=1
+    return count
+
+def has(n,t):
+    dic={}
+    for i in n:
+        dic[i]=dic.get(i,0)+1
+    return dic.get(t,0)
+    
+    
+    
+
+n=[2, 5, 2, 8, 2, 9, 5]
+t=2
+print(cou(n,t))
+print(has(n,t))

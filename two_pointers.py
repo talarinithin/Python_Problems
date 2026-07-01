@@ -238,3 +238,28 @@ def water(height):
 
 height=[1,8,6,2,5,4,8,3,7]
 print(water(height))
+
+
+
+
+def boat(nums,li):
+    nums.sort()
+    # sumval=0
+    # count=0
+    # for i in range(len(nums)):
+    #     sumval+=nums[i]
+    #     if sumval>=2 and sumval<=li:
+    #         count+=1
+    #         sumval=0 
+    # return count
+    l=0
+    r=len(nums)-1
+    boats=0
+    while l<=r:
+        
+
+
+
+nums=[3,2,2,1]
+li=3
+print(boat(nums,li))
