@@ -252,10 +252,7 @@ def boat(nums,li):
     #         count+=1
     #         sumval=0 
     # return count
-    l=0
-    r=len(nums)-1
-    boats=0
-    while l<=r:
+   
         
 
 
