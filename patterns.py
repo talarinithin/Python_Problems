@@ -125,3 +125,39 @@ def prblm11(n):
         print()
 
 prblm11(5)
+
+print("*"*60)
+
+#Floyd's triangle
+def prblm12(n):
+    num=1
+    for i in range(1,n+1):
+        for j in range(i):
+            print(num,end=" ")
+            num+=1
+        print()
+
+prblm12(4)
+print("*"*60)
+
+def prblm13(n,m):
+    for i in range(n):
+        for j in range(m):
+            print("*",end=" ")
+        print()
+
+prblm13(3,5)
+
+
+print("*"*60)
+
+def prblm14(n,m):
+    for i in range(1,n+1):
+        for j in range(1,m+1):
+            if i==1 or j==m or i==n or j==1:
+                print("*",end="")
+            else:
+                print(" ",end="")
+        print()
+
+prblm14(3,5)
